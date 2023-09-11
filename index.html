@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>bhunao notes</title>
+    <script src="https://unpkg.com/htmx.org@1.9.4" integrity="sha384-zUfuhFKKZCbHTY6aRR46gxiqszMk5tcHjsVFxnUo8VMus4kHGVdIYVbOYYNlKmHV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  </head>
+  <body>
+
+    <main class="container">
+
+      <div class="container">
+        <h1># TODO:</h1>
+      </div>
+
+        
+      <form role="search" hx-post="/todos" hx-target="#todos" hx-swap="inner" hx-vals='{"todo": "{{ todo }}"}'>
+        <input type="text" id="todo" name="todo" placeholder="..." required>
+        <button class="btn btn-light" type="submit">Search</button>
+      </form>
+
+      <table role="striped">
+        <thead>
+          <tr>
+            <th scope="col">date</th>
+            <th scope="col">note</th>
+          </tr>
+        </thead>
+        <tbody id="todos">
+          <tr>
+            <th scope="row">1</th>
+            <td>Cell</td>
+          </tr>
+          <tr>
+            <th scope="row">1</th>
+            <td>Cell</td>
+          </tr>
+          <tr>
+            <th scope="row">1</th>
+            <td>Cell</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </main>
+
+    <footer>
+      <div class="container">
+        <small>made with bun and HTMX</small>
+      </div>
+    </footer>
+
+  </body>
+</html>
